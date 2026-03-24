@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,8 +26,12 @@ SECRET_KEY = "django-insecure-td)5=0jq70@j3j-h3dg(8l)k2h50ji*=)c5@=+89vwnbjhp@uw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
+# Lista de domínios confiáveis
+CSRF_TRUSTED_ORIGINS = [
+'https://localhost:8000',
+'http://localhost:8000',
+]
 
 # Application definition
 
@@ -38,6 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "MeuApp",
+    "contatos",
+
 ]
 
 MIDDLEWARE = [
@@ -76,7 +83,7 @@ WSGI_APPLICATION = "MeuSite.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME":os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
