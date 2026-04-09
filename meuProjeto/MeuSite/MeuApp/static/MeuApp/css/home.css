@@ -1,0 +1,24 @@
+/* Estilos da home do MeuApp.
+   Coloque aqui o CSS da página inicial. */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 24px;
+    line-height: 1.5;
+}
+
+h1 {
+    color: #1f3b57;
+}
+
+.sub {
+    color: #2f4f6b;
+}
+
+.hora {
+    font-weight: 600;
+}
+
+.links a {
+    margin-right: 12px;
+}

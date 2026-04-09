@@ -18,9 +18,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from MeuApp import views as meuapp_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", meuapp_views.home, name="home-projeto"),
     path("MeuApp/", include("MeuApp.urls")),
     path("contatos/", include ('contatos.urls')),
 ]

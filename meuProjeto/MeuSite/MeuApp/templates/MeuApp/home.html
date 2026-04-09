@@ -1,16 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeira pagina html</title>
+    <title>Home | MeuSite</title>
+    <link rel="stylesheet" href="{% static 'MeuApp/css/home.css' %}">
 </head>
 <body>
-    <h1>Olá, mundo! Esta é a página inicial do MeuApp.</h1>
-    <p>Bem-vindo à nossa aplicação!</p>
-    <p>
-        link para a <a href="{% url 'MeuApp:segundaPagina' %}">segunda página</a>.
-    </p>
+    <h1>{{ saudacao }}, {{ nome_usuario }}!</h1>
+
+    <nav class="links">
+        <a href="{% url 'MeuApp:segundaPagina' %}">Segunda página</a>
+        <a href="{% url 'contatos:lista-contatos' %}">Lista de contatos</a>
+        <a href="/admin/">Painel admin</a>
+    </nav>
+
+    <p class="sub">Esta é a home page do projeto MeuSite.</p>
+    <p class="hora">Horário atual: {{ horario }}</p>
+
 
 </body>
 </html>
